@@ -8,6 +8,7 @@ import vedioload from "../assets/Vedio1.mp4"
 import img1 from "../assets/img1.jpeg"
 import AnimatedRibbons from './Banner';
 import TextSlider from './Textslider';
+import ServicesSection from './Allservice';
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,11 +35,36 @@ const HomePage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  //   1. IT Infrastructure
+
+  // 2. Networking Solutions
+
+  // 3. Cloud Services
+
+  // 4. Data Protection & Backup
+
+  // 5. Cybersecurity
+
+  // 6. Server Management
+
+  // 7. Managed IT Services
+
+  // 8. System Integration
+
+  // 9. Web Development
+
+  // 10. IT maintenence and AMC
+
   const services = [
-    { icon: <Zap className="w-8 h-8" />, title: 'Web Development', desc: 'Custom websites and web applications built with cutting-edge technologies.' },
-    { icon: <Target className="w-8 h-8" />, title: 'Digital Marketing', desc: 'Strategic campaigns to boost your online presence and drive growth.' },
-    { icon: <Users className="w-8 h-8" />, title: 'Consulting', desc: 'Expert guidance to transform your business and achieve your goals.' },
-    { icon: <CheckCircle className="w-8 h-8" />, title: 'Brand Strategy', desc: 'Comprehensive branding solutions that make your business stand out.' }
+    { icon: <Zap className="w-8 h-8" />, title: 'IT Infrastructure', desc: 'Custom websites and web applications built with cutting-edge technologies.' },
+    { icon: <Target className="w-8 h-8" />, title: 'Networking Solutions', desc: 'Strategic campaigns to boost your online presence and drive growth.' },
+    { icon: <Users className="w-8 h-8" />, title: 'Cloud Services', desc: 'Expert guidance to transform your business and achieve your goals.' },
+    { icon: <CheckCircle className="w-8 h-8" />, title: 'Data Protection & Backup', desc: 'Comprehensive branding solutions that make your business stand out.' },
+    { icon: <Users className="w-8 h-8" />, title: 'Cybersecurity', desc: 'Expert guidance to transform your business and achieve your goals.' },
+    { icon: <Users className="w-8 h-8" />, title: 'Server Management', desc: 'Expert guidance to transform your business and achieve your goals.' },
+    { icon: <CheckCircle className="w-8 h-8" />, title: 'Managed IT Services', desc: 'Comprehensive branding solutions that make your business stand out.' },
+    { icon: <CheckCircle className="w-8 h-8" />, title: 'System Integration', desc: 'Comprehensive branding solutions that make your business stand out.' },
+    { icon: <CheckCircle className="w-8 h-8" />, title: 'Web Development', desc: 'Comprehensive branding solutions that make your business stand out.' },
   ];
 
   const testimonials = [
@@ -211,9 +237,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-<TextSlider/>
+      <TextSlider />
       {/* Services Section */}
-      <section id="services" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      {/* <section id="services" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -240,8 +266,10 @@ const HomePage = () => {
             ))}
           </div>
         </div>
+      </section> */}
+      <section id="services">
+        <ServicesSection/>
       </section>
-      <AnimatedRibbons />
       {/* Why Choose Us */}
       <section id="why" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
         <div className="max-w-7xl mx-auto">
