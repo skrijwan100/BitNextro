@@ -135,10 +135,7 @@ const HomePage = () => {
           <path className="animate-draw-line animation-delay-2000" d="M0,300 Q250,250 500,300 T1000,300" stroke="url(#lineGradient)" strokeWidth="2" fill="none" />
         </svg>
       </div>
-      {/* <canvas
-          ref={canvasRef}
-          className="absolute inset-0"
-        /> */}
+
 
       {/* Navbar */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#f3f3f1] shadow-lg py-4' : 'bg-transparent py-6'}`}>
