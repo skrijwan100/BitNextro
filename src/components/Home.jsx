@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe } from 'lucide-react';
 import logo1 from "../assets/logo.jpeg"
 import logo2 from "../assets/logo2.png"
 import logo from "../assets/logo1.png"
@@ -35,26 +35,27 @@ const HomePage = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+const handleclick = (e) => {
+  e.preventDefault(); // Prevent default anchor jump
+  const target = document.querySelector('#services');
+  if (target) {
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+const handlelink = (link,e) => {
+  e.preventDefault(); // Prevent default anchor jump
+  const target = document.querySelector(`#${link}`);
+  if (target) {
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
 
-  //   1. IT Infrastructure
-
-  // 2. Networking Solutions
-
-  // 3. Cloud Services
-
-  // 4. Data Protection & Backup
-
-  // 5. Cybersecurity
-
-  // 6. Server Management
-
-  // 7. Managed IT Services
-
-  // 8. System Integration
-
-  // 9. Web Development
-
-  // 10. IT maintenence and AMC
 
   const services = [
     { icon: <Zap className="w-8 h-8" />, title: 'IT Infrastructure', desc: 'Custom websites and web applications built with cutting-edge technologies.' },
@@ -123,11 +124,11 @@ const HomePage = () => {
 
 
       {/* Hero Section */}
-      <div className='pt-36 px-4'>
+      <div className='mt-36'>
 
-          <Slider/>
+        <Slider />
       </div>
-      <section id="home" className="min-h-screen flex items-center justify-center pt-36 px-4">
+      <section id="home" className="min-h-screen flex items-center justify-center  ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
@@ -218,7 +219,7 @@ const HomePage = () => {
         </div>
       </section> */}
       <section id="services">
-        <ServicesSection/>
+        <ServicesSection />
       </section>
       {/* Why Choose Us */}
       <section id="why" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
@@ -354,7 +355,9 @@ const HomePage = () => {
                 <img className="h-20 rounded-[10px] object-cover " src={logo1} alt="" />
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                We are a team of passionate professionals dedicated to delivering exceptional services that help businesses thrive in the digital age.
+                Empowering
+                The next generation of IT
+                With Zero compromise
               </p>
               <div className="flex gap-3">
                 <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110">
@@ -375,7 +378,7 @@ const HomePage = () => {
               <ul className="space-y-3">
                 {['Home', 'About', 'Service', 'Contact'].map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                    <a href={`#${link.toLocaleLowerCase()}`} onClick={(e)=>{handlelink(link,e)}} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {link}
                     </a>
@@ -389,15 +392,18 @@ const HomePage = () => {
               <h4 className="text-lg font-semibold mb-6">Our Services</h4>
               <ul className="space-y-3">
                 {[
-                  { icon: <AlarmClock />, text: 'Daily Meal Plans', color: 'text-blue-400' },
-                  { icon: <Fingerprint />, text: 'Quality Assurance', color: 'text-orange-400' },
-                  { icon: <ServerCog />, text: 'Fast Delivery', color: 'text-red-400' },
-                  { icon: <Telescope />, text: 'Healthy Options', color: 'text-green-400' }
+                  { icon: <Code />, text: 'Software Development', color: 'text-blue-400' },
+                  { icon: <HardDrive />, text: 'Hardware', color: 'text-orange-400 ' },
+                  { icon: <CloudUpload />, text: 'Cloud Computing', color: 'text-red-400 ' },
+                  { icon: <Shield />, text: 'Cybersecurity', color: 'text-green-400 ' },
+                  { icon: <Globe />, text: 'Digital & Marketing ', color: 'text-blue-400 ' },
+
                 ].map((service) => (
-                  <li key={service.text} className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300">
-                    <span className={`text-lg ${service.color}`}>{service.icon}</span>
+                  <a href="#services" onClick={handleclick}><li key={service.text} className=" cursor-pointer flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 mb-2">
+                    <span className={`text-lg ${service.color} `}>{service.icon}</span>
                     {service.text}
                   </li>
+                  </a>
                 ))}
               </ul>
             </div>

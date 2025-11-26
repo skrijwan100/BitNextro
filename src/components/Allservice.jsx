@@ -1,35 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Layout, Smartphone, Zap, ArrowRight } from 'lucide-react';
+import { Code, Layout, Smartphone, Zap, ArrowRight, Briefcase, Cpu, Globe, Shield, Database, HardDrive, MonitorCloud, CloudUpload } from 'lucide-react';
 
 // Mock Data (Replace with your actual props)
 const services = [
   {
-    icon: <Layout size={32} />,
-    title: "UI/UX Design",
-    desc: "Crafting intuitive and stunning user experiences that captivate your audience.",
+    icon: <Code size={32} />,
+    title: "Software Development & Programming",
+    desc: ["Custom Software", "Web & Mobile Apps", "DevOps & Automation", "Maintenance & Testing"],
     color: "from-blue-400 to-cyan-300"
   },
   {
-    icon: <Code size={32} />,
-    title: "Web Development",
-    desc: "Robust and scalable web solutions built with modern technologies.",
+    icon: <HardDrive  size={32} />,
+    title: "Hardware & Infrastructure Services",
+    desc: ["Workstations & Servers", "OS & Virtualization", "Network Devices", "Hardware Maintenance"],
     color: "from-purple-400 to-pink-300"
   },
   {
-    icon: <Smartphone size={32} />,
-    title: "Mobile Apps",
-    desc: "Native and cross-platform mobile applications for iOS and Android.",
+    icon: <MonitorCloud  size={32} />,
+    title: "Hardware Maintenance",
+    desc: ["Network Setup", "Managed Networking", "VoIP and Collaboration","Network Security"],
     color: "from-orange-400 to-red-300"
   },
   {
-    icon: <Zap size={32} />,
-    title: "Digital Strategy",
-    desc: "Data-driven strategies to accelerate your digital transformation.",
+    icon: <CloudUpload  size={32} />,
+    title: "Cloud Computing & Virtualization",
+    desc: ["Cloud & Management", "IaaS ", "PaaS","SaaS"],
     color: "from-emerald-400 to-teal-300"
+  },
+  {
+    icon: <Database size={32} />,
+    title: "Data Storage, Backup & Analytics",
+    desc: [
+      "SAN/NAS & Cloud Storage Setup",
+      "Database Administration",
+      "Backup & Disaster Recovery",
+      "Data Analytics & BI Solutions"
+    ],
+    color: "from-blue-400 to-cyan-300"
+  },
+  {
+    icon: <Shield size={32} />,
+    title: "Cybersecurity & Compliance",
+    desc: [
+      "Risk Assessment & Threat Protection",
+      "Encryption & Access Control",
+      "DLP & Security Monitoring",
+      "Identity & Compliance Management"
+    ],
+    color: "from-purple-400 to-pink-300"
+  },
+  {
+    icon: <Globe size={32} />,
+    title: "Digital & Marketing Services",
+    desc: [
+      "Web Design & Development",
+      "Graphic & Multimedia Design",
+      "SEO & Social Media Management",
+      "Email & Digital Advertising"
+    ],
+    color: "from-orange-400 to-red-300"
+  },
+  {
+    icon: <Cpu size={32} />,
+    title: "Emerging Technology & Innovation",
+    desc: [
+      "AI & Machine Learning",
+      "Blockchain & Cryptocurrency",
+      "IoT & Smart Systems",
+      "AR/VR & RPA Solutions"
+    ],
+    color: "from-emerald-400 to-teal-300"
+  },
+  {
+    icon: <Briefcase size={32} />,
+    title: "Enterprise Solutions & Consulting",
+    desc: [
+      "IT Consulting & Strategy",
+      "Managed IT Services",
+      "E-commerce & ERP/CRM",
+      "Migration & Professional Services"
+    ],
+    color: "from-indigo-400 to-violet-300"
   }
-];
 
+
+];
 // Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -77,9 +133,16 @@ const ServiceCard = ({ service }) => {
           {service.title}
         </h3>
         
-        <p className="text-gray-600 mb-6 leading-relaxed">
-          {service.desc}
-        </p>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {service.desc.map((item, idx) => (
+            <span 
+              key={idx}
+              className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full border border-gray-200 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-all duration-300"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
 
         {/* 'Learn More' Link that appears on hover */}
         <div className="flex items-center text-sm font-semibold text-blue-600 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
