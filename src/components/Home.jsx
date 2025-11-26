@@ -9,8 +9,9 @@ import img1 from "../assets/img1.jpeg"
 import AnimatedRibbons from './Banner';
 import TextSlider from './Textslider';
 import ServicesSection from './Allservice';
+import Slider from './Slider';
 const HomePage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [vedioshow, setvedioshow] = useState(true)
@@ -79,25 +80,6 @@ const HomePage = () => {
     '500+ Satisfied Clients',
     '24/7 Customer Support'
   ];
-  if (vedioshow) {
-    return (
-      <>
-        <div className='flex items-center justify-center h-screen'>
-          <video
-            src={vedioload}
-            width="400"
-            height="200"
-            autoPlay
-            muted
-            loop
-
-            style={{ objectFit: "cover", display: "block" }}
-          />
-        </div>
-
-      </>
-    );
-  }
   return (
     <div className="bg-white text-gray-900 font-sans overflow-x-hidden">
 
@@ -138,43 +120,14 @@ const HomePage = () => {
 
 
       {/* Navbar */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#f3f3f1] shadow-lg py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold  from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              <img className="h-20" src={logo} alt="" />
-            </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              {['Home', 'Services', 'About', 'Contact', 'Blog'].map(item => (
-                <a key={item} href={`#${item.toLowerCase()}`} className={`text-gray-700 text-xl font-[play]  hover:text-[#168acc] font-medium ${scrolled ? "border-[#f3f3f1] border-2" : "border-[#ffff] border-2"} hovereffect`}>
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 space-y-3">
-              {['Home', 'Services', 'About', 'Contact'].map(item => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="block text-gray-700 hover:text-blue-600 transition-colors duration-300">
-                  {item}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4">
+      <div className='pt-36 px-4'>
+
+          <Slider/>
+      </div>
+      <section id="home" className="min-h-screen flex items-center justify-center pt-36 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">

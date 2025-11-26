@@ -4,12 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HomePage from './components/Home'
 import InteractiveBackground from './components/b'
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Navbar/>
       <HomePage/>
       {/* <InteractiveBackground/> */}
     </>
