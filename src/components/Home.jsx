@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe } from 'lucide-react';
 import logo1 from "../assets/logo.jpeg"
-import logo2 from "../assets/logo2.png"
-import logo from "../assets/logo1.png"
-import vedioload from "../assets/Vedio1.mp4"
+import logo from "../assets/Powering.png"
 // import vedioload from "../assets/Techrootvedio.mp4"
 import img1 from "../assets/img1.jpeg"
 import AnimatedRibbons from './Banner';
 import TextSlider from './Textslider';
 import ServicesSection from './Allservice';
 import Slider from './Slider';
+import ContactSection from './ContactUs';
 const HomePage = () => {
 
   const [scrolled, setScrolled] = useState(false);
@@ -35,26 +34,25 @@ const HomePage = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-const handleclick = (e) => {
-  e.preventDefault(); // Prevent default anchor jump
-  const target = document.querySelector('#services');
-  if (target) {
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+  const handleclick = (e) => {
+    e.preventDefault(); // Prevent default anchor jump
+    const target = document.querySelector('#services');
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
-}
-const handlelink = (link,e) => {
-  e.preventDefault(); // Prevent default anchor jump
-  const target = document.querySelector(`#${link}`);
-  if (target) {
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+  const handlelink = (link, e) => {
+    e.preventDefault(); // Prevent default anchor jump
+    const target = document.querySelector(link);
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
   }
-}
 
 
   const services = [
@@ -124,11 +122,11 @@ const handlelink = (link,e) => {
 
 
       {/* Hero Section */}
-      <div className='mt-36'>
+      <div className='mt-36 animate-fade-in-up'>
 
         <Slider />
       </div>
-      <section id="home" className="min-h-screen flex items-center justify-center  ">
+      <section id="home" data-animate className="min-h-screen flex items-center justify-center  ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
@@ -169,14 +167,19 @@ const handlelink = (link,e) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold lg:h-20 h-26 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 About Our Company
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                We are a team of passionate professionals dedicated to delivering exceptional services that help businesses thrive in the digital age.
+              <p className="text-gray-900 text-lg leading-relaxed mb-4">
+                We're BitNextro Solutions, a next-gen IT startup that converts ideas into smart technology.
+                From seamless software to reliable IT services, we build solutions that make business
+                operations simpler, faster, and more transformative.
+                Curiosity, creativity, and purpose drive us, and we don't just follow trends-we create them.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                With over a decade of experience, we combine innovation, expertise, and creativity to provide solutions that exceed expectations and drive measurable results.
+              <p className="text-gray-900 text-lg leading-relaxed">
+                Our mission is to deliver practical, end-to-end IT solutions from networking and infrastructure to
+                tech support and cyber security solutions designed to make operations simpler, more
+                productive, and ultimately help businesses succeed in a digital world.
               </p>
             </div>
             <div className="relative">
@@ -188,36 +191,6 @@ const handlelink = (link,e) => {
           </div>
         </div>
       </section>
-      <TextSlider />
-      {/* Services Section */}
-      {/* <section id="services" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Our Services
-            </h2>
-            <p className="text-gray-600 text-lg">Comprehensive solutions tailored to your needs</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, idx) => (
-              <div
-                key={idx}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
       <section id="services">
         <ServicesSection />
       </section>
@@ -287,7 +260,9 @@ const handlelink = (link,e) => {
 
       {/* Contact Section */}
       <section id="contact" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="max-w-4xl mx-auto">
+        <h1>Contact Us</h1>
+        <ContactSection/>
+        {/* <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Get In Touch
@@ -342,7 +317,7 @@ const handlelink = (link,e) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Footer */}
@@ -352,7 +327,7 @@ const handlelink = (link,e) => {
             {/* Brand Section */}
             <div>
               <h3 className="text-3xl font-bold mb-4 bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                <img className="h-20 rounded-[10px] object-cover " src={logo1} alt="" />
+                <img className="h-28 rounded-[10px] object-cover " src={logo} alt="" />
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Empowering
@@ -378,7 +353,7 @@ const handlelink = (link,e) => {
               <ul className="space-y-3">
                 {['Home', 'About', 'Service', 'Contact'].map((link) => (
                   <li key={link}>
-                    <a href={`#${link.toLocaleLowerCase()}`} onClick={(e)=>{handlelink(link,e)}} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                    <a href={`#${link.toLocaleLowerCase()}`} onClick={(e) => { handlelink(link, e) }} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {link}
                     </a>

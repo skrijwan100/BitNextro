@@ -117,10 +117,10 @@ const ServiceCard = ({ service }) => {
       <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-gray-200 to-gray-100 opacity-50 group-hover:opacity-100 group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-500 blur-sm -z-10" />
       
       {/* Card Content */}
-      <div className="h-full relative bg-white/80 backdrop-blur-xl p-8 rounded-xl shadow-sm group-hover:shadow-2xl transition-all duration-300 border border-white/20 overflow-hidden">
+      <div className="h-full  relative bg-white/80 backdrop-blur-xl p-8 rounded-xl shadow-sm group-hover:shadow-2xl transition-all duration-300 border border-white/20 overflow-hidden" style={{border:`3px solid blue`}}>
         
         {/* Decorative Background Blob inside card */}
-        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-linear-to-br ${service.color} opacity-10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700`} />
+        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-linear-to-br ${service.color} opacity-55 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700`} />
 
         {/* Icon Container */}
         <div className={`w-14 h-14 mb-6 rounded-lg bg-linear-to-br ${service.color} p-0.5 shadow-lg group-hover:rotate-6 transition-transform duration-300`}>
@@ -137,7 +137,7 @@ const ServiceCard = ({ service }) => {
           {service.desc.map((item, idx) => (
             <span 
               key={idx}
-              className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full border border-gray-200 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-all duration-300"
+              className="px-3 py-1.5 bg-blue-500 text-gray-900 text-sm rounded-full border border-gray-900 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-all duration-300"
             >
               {item}
             </span>

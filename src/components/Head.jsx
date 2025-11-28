@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Head() {
   return (
-    <div className='bg-[#031bb8] flex h-14 justify-between'>
+    <div className='bg-[#0928f6] flex h-14 justify-between'>
         <div className='text-white flex gap-4 ml-3'>
             <span className='flex items-center gap-1'><Mail /> info@proservice.com</span> 
             <span className='flex items-center gap-1'><Phone /> +1 (555) 123-4567

@@ -6,6 +6,13 @@ import { Menu, X } from 'lucide-react';
 import Head from './Head';
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleSmoothScroll = (e, id) => {
+  e.preventDefault();
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
     return (
         <div>
             <nav className={`fixed w-full z-50 transition-all duration-300 ${'bg-[#f3f3f1] shadow-lg '}`}>
@@ -13,13 +20,13 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
                         <div className="text-2xl font-bold  from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                            <img className="h-20" src={logo} alt="" />
+                            <img className=" w-[225px]" src={logo} alt="" />
                         </div>
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex space-x-8">
-                            {['Home', 'Services', 'About', 'Career','Contact Us'].map(item => (
-                                <a key={item} href={`#${item.toLowerCase()}`} className={`text-gray-700 text-xl font-[play]  hover:text-[#168acc] font-medium ${"border-[#f3f3f1] border-2"} hovereffect`}>
+                            {['Home', 'Services', 'About', 'Career','Contact'].map(item => (
+                                <a key={item} href={`#${item.toLowerCase()}`} onClick={(e) => handleSmoothScroll(e, item.toLowerCase())} className={`text-gray-700 text-xl font-[play]  hover:text-[#168acc] font-medium ${"border-[#f3f3f1] border-2"} hovereffect`}>
                                     {item}
                                 </a>
                             ))}
