@@ -223,7 +223,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
       {/* Testimonials */}
       <section id="testimonials" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('testimonials') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="max-w-7xl mx-auto">
