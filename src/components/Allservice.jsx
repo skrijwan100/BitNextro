@@ -156,7 +156,7 @@ const ServiceCard = ({ service }) => {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-24 px-4 overflow-hidden bg-gray-50">
+    <section id="services" className="relative py-24 px-4 overflow-hidden bg-blue-300 mt-7" style={{borderTopRightRadius:"100px", borderTopLeftRadius:"100px"}}>
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-30">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>

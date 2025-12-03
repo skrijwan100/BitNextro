@@ -163,7 +163,7 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{background:"#d4d4d4",borderBottomLeftRadius:"200px", borderBottomRightRadius:"200px"}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
