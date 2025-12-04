@@ -116,12 +116,12 @@ export default function Navbar() {
 
   return (  
     <div>
-      <nav className="fixed w-full z-40 transition-all duration-300 bg-[#f3f3f1] shadow-lg">
+      <nav className="fixed w-full  z-40 transition-all duration-300 bg-[#f3f3f1] shadow-lg">
         <Head />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <img className="w-[170px] md:w-[225px]" src={logo} alt="logo" />
+              <img className="w-20 h-20 md:w-[225px] " src={logo} alt="logo" />
             </div>
 
             {/* Desktop Menu */}
