@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone
 import logo1 from "../assets/logo.jpeg"
 import logo from "../assets/Powering.png"
 // import vedioload from "../assets/Techrootvedio.mp4"
+import vedio from "../assets/Vedio1.mp4"
 import img1 from "../assets/img1.jpeg"
 import AnimatedRibbons from './Banner';
 import TextSlider from './Textslider';
@@ -80,7 +81,7 @@ const HomePage = () => {
     '24/7 Customer Support'
   ];
   return (
-    <div className="bg-white text-gray-900 font-sans overflow-x-hidden">
+    <div className=" text-gray-900 font-sans overflow-x-hidden">
 
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
@@ -142,7 +143,7 @@ const HomePage = () => {
           </div>
 
           {/* Floating Icons */}
-          <div className="mt-16 relative h-64">
+          {/* <div className="mt-16 relative h-64">
             <div className="absolute top-0 left-1/4 animate-float">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center shadow-lg">
                 <Zap className="text-blue-600" />
@@ -158,12 +159,12 @@ const HomePage = () => {
                 <Users className="text-pink-600" />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{background:"#d4d4d4",borderBottomLeftRadius:"200px", borderBottomRightRadius:"200px"}}>
+      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ background: "#d4d4d4", borderBottomLeftRadius: "200px", borderBottomRightRadius: "200px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -191,11 +192,11 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section id="services">
+      <section id="services" className='mt-64'>
         <ServicesSection />
       </section>
       {/* Why Choose Us */}
-      <section id="why" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+      <section id="why" data-animate className={`py-20 px-4 bg-white transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 md:order-1">
@@ -223,7 +224,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section id="testimonials" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('testimonials') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+      {/* <section id="testimonials" data-animate className={`py-20 px-4 bg-gray-50 transition-all duration-1000 ${visibleSections.has('testimonials') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -254,70 +255,18 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <div>
+        <video className='w-full' playsInline muted autoPlay loop id="myVideo">
+          <source src={vedio} type="video/mp4"/>
+        </video>
+      </div>
 
       {/* Contact Section */}
-      <section id="contact" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <h1>Contact Us</h1>
-        <ContactSection/>
-        {/* <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Get In Touch
-            </h2>
-            <p className="text-gray-600 text-lg">Let's discuss how we can help your business grow</p>
-          </div>
-
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
-            <div className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-6 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-6 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300"
-                />
-              </div>
-              <input
-                type="text"
-                placeholder="Subject"
-                className="w-full px-6 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300"
-              />
-              <textarea
-                rows="6"
-                placeholder="Your Message"
-                className="w-full px-6 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 resize-none"
-              ></textarea>
-              <button
-                onClick={() => alert('Message sent! (This is a demo)')}
-                className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
-              <div className="flex items-center space-x-3">
-                <Mail className="text-blue-600" />
-                <span className="text-gray-600">info@proservice.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="text-blue-600" />
-                <span className="text-gray-600">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="text-blue-600" />
-                <span className="text-gray-600">New York, USA</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
+      <section id="contact" data-animate className={`py-20  mt-56  transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <ContactSection />
       </section>
-
+      
       {/* Footer */}
       <footer className="relative z-10 bg-linear-to-br from-sky-900 via-sky-800 to-sky-900 text-white py-16 px-8">
         <div className="max-w-7xl mx-auto">

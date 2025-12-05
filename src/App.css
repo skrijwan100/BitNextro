@@ -203,3 +203,8 @@
  .animate-fade-in-delay {
    animation: fade-in 0.6s ease-out 0.2s both;
  }
+#myVideo{
+  position: fixed;
+  top: 10px;
+  z-index: -1;
+}
