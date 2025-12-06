@@ -123,7 +123,7 @@ const HomePage = () => {
 
 
       {/* Hero Section */}
-      <div className='mt-36 animate-fade-in-up'>
+      <div className='mt-8 h-[600px]  animate-fade-in-up bg-amber-300'>
 
         <Slider />
       </div>
