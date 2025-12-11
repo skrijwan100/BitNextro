@@ -256,9 +256,9 @@ const HomePage = () => {
         </div>
       </section> */}
       <div>
-        <video className='w-full' playsInline muted autoPlay loop id="myVideo">
+        {/* <video className='w-full' playsInline muted autoPlay loop id="myVideo">
           <source src={vedio} type="video/mp4"/>
-        </video>
+        </video> */}
       </div>
 
       {/* Contact Section */}
