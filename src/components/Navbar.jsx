@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import logo from "../assets/logo1.png";
+import logo_final from "../assets/f_logo.jpg"
+import logo_final_p from "../assets/f_logo.png"
 import { Menu, X } from "lucide-react";
 import Head from "./Head";
 
@@ -96,7 +98,6 @@ const servicesData = [
       "Professional Services — training, project mgmt, contracts",
     ],
   },
-  // ... rest of categories (hardware, networking, cloud, storage, security, digital, emerging, enterprise)
 ];
 
 export default function Navbar() {
@@ -116,16 +117,16 @@ export default function Navbar() {
 
   return (  
     <div>
-      <nav className="fixed w-full  z-40 transition-all duration-300 bg-[#f3f3f1] shadow-lg">
+      <nav className="fixed w-full md:h-[155px] z-40 transition-all duration-300 bg-[#f3f3f1] shadow-lg">
         <Head />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <img className="w-20 h-20 md:w-[225px] " src={logo} alt="logo" />
+              <img className=" w-[220px] md:w-[280px] md:mt-[18px]" src={logo_final_p} alt="logo" />
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center mt-5 space-x-8">
               <a
                 href="#home"
                 onClick={(e) => {

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe } from 'lucide-react';
+import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe, Award } from 'lucide-react';
 import logo1 from "../assets/logo.jpeg"
 import logo from "../assets/Powering.png"
+import logo_final from "../assets/f_logo.jpg"
+import pic1 from "../assets/pic1.png"
 // import vedioload from "../assets/Techrootvedio.mp4"
 import vedio from "../assets/Vedio1.mp4"
 import img1 from "../assets/img1.jpeg"
@@ -75,10 +77,10 @@ const HomePage = () => {
   ];
 
   const reasons = [
-    '10+ Years of Industry Experience',
-    'Results-Driven Approach',
-    '500+ Satisfied Clients',
-    '24/7 Customer Support'
+    'Affordable and flexible pricing',
+    'Latest tools and technology',
+    'End to end digital solutions',
+    'Commitment to long term growth'
   ];
   return (
     <div className=" text-gray-900 font-sans overflow-x-hidden">
@@ -123,17 +125,41 @@ const HomePage = () => {
 
 
       {/* Hero Section */}
-      <div className='mt-8 h-[600px]  animate-fade-in-up bg-amber-300'>
+      <div>
+        <section id="home" data-animate className="min-h-screen flex items-center justify-center relative ">
+
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="animate-fade-in-up">
+              <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-yellow-500 via-orange-500 to-green-500 bg-clip-text text-transparent animate-gradient">
+                Empowering <br /> The next generation of IT <br /> With Zero compromise
+              </h1>
+              <p className="text-xl    md:text-4xl text-orange-500 font-bold mb-8 max-w-3xl mx-auto bg-[#134590a3]">
+                Professional services that drive growth, innovation, and success for modern businesses
+              </p>
+              <button className="group  bg-linear-to-r from-yellow-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
+                Get Started
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </section>
+        <video className='w-full relative -z-1 top-[-619px]' playsInline muted autoPlay loop >
+
+          <source src={vedio} type="video/mp4" />
+        </video>
+      </div>
+      {/* <div className='mt-8 h-[600px]  animate-fade-in-up '>
 
         <Slider />
-      </div>
-      <section id="home" data-animate className="min-h-screen flex items-center justify-center  ">
+      </div> */}
+      {/* <section id="home" data-animate className="min-h-screen flex items-center justify-center  ">
+
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
               Empowering <br /> The next generation of IT <br /> With Zero compromise
             </h1>
-            <p className="text-xl    md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-green-500 mb-8 max-w-3xl mx-auto">
               Professional services that drive growth, innovation, and success for modern businesses
             </p>
             <button className="group  bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
@@ -141,29 +167,11 @@ const HomePage = () => {
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-          {/* Floating Icons */}
-          {/* <div className="mt-16 relative h-64">
-            <div className="absolute top-0 left-1/4 animate-float">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center shadow-lg">
-                <Zap className="text-blue-600" />
-              </div>
-            </div>
-            <div className="absolute top-10 right-1/4 animate-float animation-delay-2000">
-              <div className="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center shadow-lg">
-                <Target className="text-purple-600" />
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-1/3 animate-float animation-delay-4000">
-              <div className="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center shadow-lg">
-                <Users className="text-pink-600" />
-              </div>
-            </div>
-          </div> */}
         </div>
-      </section>
+      </section> */}
 
       {/* About Section */}
-      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ background: "#d4d4d4", borderBottomLeftRadius: "200px", borderBottomRightRadius: "200px" }}>
+      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ background: "", borderBottomLeftRadius: "200px", borderBottomRightRadius: "200px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -195,12 +203,12 @@ const HomePage = () => {
         <ServicesSection />
       </section>
       {/* Why Choose Us */}
-      <section id="why" data-animate className={`py-20 px-4 bg-white transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+      <section id="why" data-animate className={`py-20 px-4 bg-[#7ac34b] transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 md:order-1">
-              <div className="w-full flex items-center justify-center h-96 bg-linear-to-br rounded-3xl shadow-2xl animate-pulse-slow">
-                <img src={img1} alt="" className='h-[350px]' />
+              <div className="w-full flex items-center justify-center h-96 bg-linear-to-br rounded-3xl animate-pulse-slow">
+                <img src={pic1} alt="" className='h-[350px]' />
               </div>
             </div>
             <div className="order-1 md:order-2">
@@ -214,7 +222,7 @@ const HomePage = () => {
                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 transition-colors duration-300"
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    <CheckCircle className="text-green-500 shrink-0" />
+                    <CheckCircle className="text-blue-700 shrink-0" />
                     <span className="text-lg font-medium">{reason}</span>
                   </div>
                 ))}
@@ -262,10 +270,10 @@ const HomePage = () => {
       </div>
 
       {/* Contact Section */}
-      <section id="contact" data-animate className={`py-20  mt-56  transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <section id="contact" data-animate className={`pt-20    transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <ContactSection />
       </section>
-      
+
       {/* Footer */}
       <footer className="relative z-10 bg-linear-to-br from-sky-900 via-sky-800 to-sky-900 text-white py-16 px-8">
         <div className="max-w-7xl mx-auto">
@@ -273,7 +281,7 @@ const HomePage = () => {
             {/* Brand Section */}
             <div>
               <h3 className="text-3xl font-bold mb-4 bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                <img className="h-28 rounded-[10px] object-cover " src={logo} alt="" />
+                <img className="h-28 rounded-[10px] object-cover " src={logo_final} alt="" />
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Empowering
@@ -313,8 +321,8 @@ const HomePage = () => {
               <h4 className="text-lg font-semibold mb-6">Our Services</h4>
               <ul className="space-y-3">
                 {[
+                  { icon: <Award  />, text: 'IT Infrastructure setup and management', color: 'text-orange-400' },
                   { icon: <Code />, text: 'Software Development', color: 'text-blue-400' },
-                  { icon: <HardDrive />, text: 'Hardware', color: 'text-orange-400 ' },
                   { icon: <CloudUpload />, text: 'Cloud Computing', color: 'text-red-400 ' },
                   { icon: <Shield />, text: 'Cybersecurity', color: 'text-green-400 ' },
                   { icon: <Globe />, text: 'Digital & Marketing ', color: 'text-blue-400 ' },

@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const ContactSectionLight = () => {
     return (
-        <div className="w-full min-h-screen rounded-t-[100px] flex items-center justify-center bg-slate-200 py-20 px-4">
+        <div className="w-full min-h-screen rounded-t-[100px] flex items-center justify-center bg-sky-200 py-20 px-4">
             <div className="max-w-5xl w-full mx-auto">
 
                 <div className="grid lg:grid-cols-2 gap-0 lg:gap-12 bg-white rounded-4xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden" style={{ borderBottomRightRadius: "164px", borderTopLeftRadius: "100px" }}>
