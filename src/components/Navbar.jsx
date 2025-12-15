@@ -311,6 +311,17 @@ export default function Navbar() {
               </a>
 
               <a
+                href="#career"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
+                className="block px-4 py-2 text-gray-700 hover:text-blue-600"
+              >
+                Career
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();

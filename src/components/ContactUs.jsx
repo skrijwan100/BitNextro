@@ -17,7 +17,7 @@ const ContactSectionLight = () => {
 
                         <div className="space-y-2">
                             <div>
-                                <label className="text-sm font-medium text-gray-600 mb-1 block">First Name</label>
+                                <label className="text-sm font-medium text-gray-600 mb-1 block">Full Name</label>
                                 <input
                                     type="text"
                                     className="w-full px-5 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200"
@@ -61,11 +61,11 @@ const ContactSectionLight = () => {
                             <div className="space-y-6">
                                 <div className="flex items-center space-x-4 text-blue-50">
                                     <Phone className="w-6 h-6" />
-                                    <span>+1 (555) 123-4567</span>
+                                    <span>+91 9330855877</span>
                                 </div>
                                 <div className="flex items-center space-x-4 text-blue-50">
                                     <Mail className="w-6 h-6" />
-                                    <span>contact@proservice.com</span>
+                                    <span>bitnextrosolutions@gmail.com</span>
                                 </div>
                                 <div className="flex items-center space-x-4 text-blue-50">
                                     <MapPin className="w-6 h-6" />

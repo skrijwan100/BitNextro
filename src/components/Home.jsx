@@ -4,8 +4,10 @@ import logo1 from "../assets/logo.jpeg"
 import logo from "../assets/Powering.png"
 import logo_final from "../assets/f_logo.jpg"
 import pic1 from "../assets/pic1.png"
+import wplogo from "../assets/wplogo.png"
 // import vedioload from "../assets/Techrootvedio.mp4"
-import vedio from "../assets/Vedio1.mp4"
+// import vedio from "../assets/Vedio1.mp4"
+import vedio from "../assets/vedio2.mp4"
 import img1 from "../assets/img1.jpeg"
 import AnimatedRibbons from './Banner';
 import TextSlider from './Textslider';
@@ -17,6 +19,7 @@ const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [vedioshow, setvedioshow] = useState(true)
+  const [IsShow,setIsShow]=useState(true)
   useEffect(() => {
     const handleScroll = () => {
       setTimeout(() => {
@@ -32,11 +35,17 @@ const HomePage = () => {
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const handlemessagebtn=()=>{
+    if(IsShow){
+      return setIsShow(false)
+    }
+    setIsShow(true)
+
+  }
   const handleclick = (e) => {
     e.preventDefault(); // Prevent default anchor jump
     const target = document.querySelector('#services');
@@ -122,18 +131,25 @@ const HomePage = () => {
 
 
       {/* Navbar */}
+      {IsShow?"":<div className="wplogo fixed bottom-16 z-100 right-0 cursor-pointer ">
 
-
+        <div className='bg-green-500 h-[82px] w-[150px] flex items-center justify-center rounded-3xl'>
+          <a href="https://wa.me/919635013952?text=Hwllo%20how%20are%20you?" target='_blank'><button className=' bg-sky-600 p-2 rounded-2xl font-[play] font-bold border-2 cursor-pointer'>Send Message</button></a>
+        </div>
+      </div>}
+      <div className="wplogo fixed bottom-2 z-100 right-0 cursor-pointer ">
+        <img onClick={handlemessagebtn} className='h-15 w-15' src={wplogo} alt="" />
+      </div>
       {/* Hero Section */}
-      <div>
-        <section id="home" data-animate className="min-h-screen flex items-center justify-center relative ">
+      <div className=''>
+        <section id="home" data-animate className="md:min-h-screen flex items-center justify-center relative mt-22 md:mt-0">
 
-          <div className="max-w-7xl mx-auto text-center">
+          <div className="max-w-7xl mx-auto text-center  md:mb-0">
             <div className="animate-fade-in-up">
-              <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-yellow-500 via-orange-500 to-green-500 bg-clip-text text-transparent animate-gradient">
+              <h1 className="text-4xl md:text-7xl font-bold mb-6 bg-linear-to-r from-yellow-500 via-orange-500 to-green-500 bg-clip-text text-transparent animate-gradient">
                 Empowering <br /> The next generation of IT <br /> With Zero compromise
               </h1>
-              <p className="text-xl    md:text-4xl text-orange-500 font-bold mb-8 max-w-3xl mx-auto bg-[#134590a3]">
+              <p className="text-2xl md:text-4xl text-orange-500 font-bold mb-8 max-w-3xl mx-auto bg-[#134590fe] md:bg-[#134590a3]">
                 Professional services that drive growth, innovation, and success for modern businesses
               </p>
               <button className="group  bg-linear-to-r from-yellow-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
@@ -143,7 +159,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <video className='w-full relative -z-1 top-[-619px]' playsInline muted autoPlay loop >
+        <video className='w-full relative -z-1 top-[-619px] hidden md:block' playsInline muted autoPlay loop >
 
           <source src={vedio} type="video/mp4" />
         </video>
@@ -152,24 +168,6 @@ const HomePage = () => {
 
         <Slider />
       </div> */}
-      {/* <section id="home" data-animate className="min-h-screen flex items-center justify-center  ">
-
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
-              Empowering <br /> The next generation of IT <br /> With Zero compromise
-            </h1>
-            <p className="text-xl md:text-2xl text-green-500 mb-8 max-w-3xl mx-auto">
-              Professional services that drive growth, innovation, and success for modern businesses
-            </p>
-            <button className="group  bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
-              Get Started
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section> */}
-
       {/* About Section */}
       <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ background: "", borderBottomLeftRadius: "200px", borderBottomRightRadius: "200px" }}>
         <div className="max-w-7xl mx-auto">
@@ -212,7 +210,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 pb-3 bg-linear-to-r from-blue-900 to-purple-900 bg-clip-text text-transparent">
                 Why Choose Us?
               </h2>
               <div className="space-y-4">
@@ -263,11 +261,6 @@ const HomePage = () => {
           </div>
         </div>
       </section> */}
-      <div>
-        {/* <video className='w-full' playsInline muted autoPlay loop id="myVideo">
-          <source src={vedio} type="video/mp4"/>
-        </video> */}
-      </div>
 
       {/* Contact Section */}
       <section id="contact" data-animate className={`pt-20    transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -321,7 +314,7 @@ const HomePage = () => {
               <h4 className="text-lg font-semibold mb-6">Our Services</h4>
               <ul className="space-y-3">
                 {[
-                  { icon: <Award  />, text: 'IT Infrastructure setup and management', color: 'text-orange-400' },
+                  { icon: <Award />, text: 'IT Infrastructure setup and management', color: 'text-orange-400' },
                   { icon: <Code />, text: 'Software Development', color: 'text-blue-400' },
                   { icon: <CloudUpload />, text: 'Cloud Computing', color: 'text-red-400 ' },
                   { icon: <Shield />, text: 'Cybersecurity', color: 'text-green-400 ' },
