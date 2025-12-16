@@ -14,6 +14,7 @@ import TextSlider from './Textslider';
 import ServicesSection from './Allservice';
 import Slider from './Slider';
 import ContactSection from './ContactUs';
+import WhatsAppContact from './Wpmessage';
 const HomePage = () => {
 
   const [scrolled, setScrolled] = useState(false);
@@ -131,7 +132,7 @@ const HomePage = () => {
 
 
       {/* Navbar */}
-      {IsShow?"":<div className="wplogo fixed bottom-16 z-100 right-0 cursor-pointer ">
+      {/* {IsShow?"":<div className="wplogo fixed bottom-16 z-100 right-0 cursor-pointer ">
 
         <div className='bg-green-500 h-[82px] w-[150px] flex items-center justify-center rounded-3xl'>
           <a href="https://wa.me/919635013952?text=Hwllo%20how%20are%20you?" target='_blank'><button className=' bg-sky-600 p-2 rounded-2xl font-[play] font-bold border-2 cursor-pointer'>Send Message</button></a>
@@ -139,7 +140,8 @@ const HomePage = () => {
       </div>}
       <div className="wplogo fixed bottom-2 z-100 right-0 cursor-pointer ">
         <img onClick={handlemessagebtn} className='h-15 w-15' src={wplogo} alt="" />
-      </div>
+      </div> */}
+      <WhatsAppContact/>
       {/* Hero Section */}
       <div className=''>
         <section id="home" data-animate className="md:min-h-screen flex items-center justify-center relative mt-22 md:mt-0">
@@ -173,7 +175,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold lg:h-20 h-26 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold lg:h-20 h-26 bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
                 About Our Company
               </h2>
               <p className="text-gray-900 text-lg leading-relaxed mb-4">
@@ -201,16 +203,16 @@ const HomePage = () => {
         <ServicesSection />
       </section>
       {/* Why Choose Us */}
-      <section id="why" data-animate className={`py-20 px-4 bg-[#7ac34b] transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+      <section id="why" data-animate className={`py-20 px-4 bg-green-500 transition-all duration-1000 ${visibleSections.has('why') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'}`}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 md:gap-12 items-center">
             <div className="relative order-2 md:order-1">
               <div className="w-full flex items-center justify-center h-96 bg-linear-to-br rounded-3xl animate-pulse-slow">
-                <img src={pic1} alt="" className='h-[350px]' />
+                <img src={pic1} alt="" className='md:h-[350px] ' />
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 pb-3 bg-linear-to-r from-blue-900 to-purple-900 bg-clip-text text-transparent">
+              <h2 className="text-5xl text-center md:text-left md:text-5xl font-bold mb-8 pb-3 bg-linear-to-r from-[#0700a9] to-gray-900 bg-clip-text text-transparent">
                 Why Choose Us?
               </h2>
               <div className="space-y-4">
@@ -220,8 +222,8 @@ const HomePage = () => {
                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 transition-colors duration-300"
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
-                    <CheckCircle className="text-blue-700 shrink-0" />
-                    <span className="text-lg font-medium">{reason}</span>
+                    <CheckCircle className="text-[#0700a9] shrink-0" />
+                    <span className="text-xl md:text-2xl font-medium">{reason}</span>
                   </div>
                 ))}
               </div>
@@ -263,7 +265,7 @@ const HomePage = () => {
       </section> */}
 
       {/* Contact Section */}
-      <section id="contact" data-animate className={`pt-20    transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <section id="contact" data-animate className={`    transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <ContactSection />
       </section>
 

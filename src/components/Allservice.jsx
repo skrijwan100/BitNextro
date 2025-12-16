@@ -137,7 +137,7 @@ const ServiceCard = ({ service }) => {
           {service.desc.map((item, idx) => (
             <span 
               key={idx}
-              className="px-3 py-1.5 bg-blue-500 text-gray-900 text-sm rounded-full border border-gray-900 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-all duration-300"
+              className="px-3 py-1.5 bg-green-500 text-gray-900 text-sm rounded-full border border-gray-900 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-all duration-300"
             >
               {item}
             </span>
@@ -156,7 +156,7 @@ const ServiceCard = ({ service }) => {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-24 px-4 overflow-hidden bg-blue-300 mt-7" style={{borderTopRightRadius:"100px", borderTopLeftRadius:"100px"}}>
+    <section id="services" className="relative py-24 px-4 overflow-hidden bg-blue-400 mt-7" style={{borderTopRightRadius:"100px", borderTopLeftRadius:"100px"}}>
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-30">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
