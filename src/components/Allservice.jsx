@@ -117,14 +117,14 @@ const ServiceCard = ({ service }) => {
       <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-gray-200 to-gray-100 opacity-50 group-hover:opacity-100 group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-500 blur-sm -z-10" />
       
       {/* Card Content */}
-      <div className="h-full  relative bg-white/80 backdrop-blur-xl p-8 rounded-xl shadow-sm group-hover:shadow-2xl transition-all duration-300 border border-white/20 overflow-hidden" style={{border:`3px solid blue`}}>
+      <div className="h-full  relative bg-[#72dc9c] backdrop-blur-xl p-8 rounded-xl shadow-sm group-hover:shadow-2xl transition-all duration-300 border border-white/20 overflow-hidden" style={{border:`3px solid blue`}}>
         
         {/* Decorative Background Blob inside card */}
         <div className={`absolute -top-10 -right-10 w-32 h-32 bg-linear-to-br ${service.color} opacity-55 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700`} />
 
         {/* Icon Container */}
         <div className={`w-14 h-14 mb-6 rounded-lg bg-linear-to-br ${service.color} p-0.5 shadow-lg group-hover:rotate-6 transition-transform duration-300`}>
-          <div className="w-full h-full bg-white rounded-[7px] flex items-center justify-center text-gray-700 group-hover:text-black">
+          <div className="w-full h-full bg-[#00ff66]    rounded-[7px] flex items-center justify-center text-sky-700 group-hover:text-black">
             {service.icon}
           </div>
         </div>
@@ -171,7 +171,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-2"
         >
-          <span className="px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide uppercase mb-1 inline-block">
+          <span className="px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide uppercase mb-1 inline-block animate-bounce">
             What We Offer
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-linear-to-r from-gray-900 via-blue-800 to-gray-900">

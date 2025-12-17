@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import logo from "../assets/logo1.png";
-import logo_final from "../assets/f_logo.jpg"
 import logo_final_p from "../assets/f_logo.png"
 import { Menu, X } from "lucide-react";
 import Head from "./Head";

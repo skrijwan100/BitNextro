@@ -41,48 +41,35 @@ const ContactSectionLight = () => {
 
                             <button
                                 onClick={() => alert('Message sent!')}
-                                className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
+                                className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
                             >
                                 Send Message
                                 <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>
                     </div>
-                    {/* Left Side: Info & Decoration - Primary Blue Background */}
-                    <div className="bg-linear-to-br from-blue-600 to-indigo-700 p-10 md:p-12 flex flex-col justify-between relative overflow-hidden">
+                    <div className="bg-linear-to-br from-[#05c45e] to-[#137644] p-10 md:p-12 flex flex-col justify-between relative overflow-hidden">
                         {/* Background Shapes */}
                         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-500/20 blur-3xl"></div>
 
                         <div className="relative z-10">
-                            <h3 className="text-3xl font-bold text-white mb-4">Contact Information</h3>
-                            <p className="text-blue-100 text-lg mb-8">Say something to start a live chat!</p>
+                            <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 mb-4">Contact Information</h3>
+                            <p className="text-gray-900 text-xl mb-8">Say something to start a live chat!</p>
 
                             <div className="space-y-6">
-                                <div className="flex items-center space-x-4 text-blue-50">
+                                <div className="flex items-center space-x-4 text-gray-900 font-bold text-xl">
                                     <Phone className="w-6 h-6" />
                                     <span>+91 9330855877</span>
                                 </div>
-                                <div className="flex items-center space-x-4 text-blue-50">
+                                <div className="flex items-center space-x-4 text-gray-900 font-bold  text-xl">
                                     <Mail className="w-6 h-6" />
-                                    <span>bitnextrosolutions@gmail.com</span>
+                                    <span>bitnextro@gmail.com</span>
                                 </div>
-                                <div className="flex items-center space-x-4 text-blue-50">
+                                <div className="flex items-center space-x-4 text-gray-900 font-bold  text-xl">
                                     <MapPin className="w-6 h-6" />
-                                    <span>123 Blue Avenue, New York, NY</span>
+                                    <span>Reveal very soon </span>
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* Social/Decor icons could go here */}
-                        <div className="relative z-10 mt-12 lg:mt-0">
-                            <div className="flex space-x-4">
-                                {/* Social circles */}
-                                {[1, 2, 3].map(i => (
-                                    <div key={i} className="w-10 h-10 rounded-full bg-blue-500/50 hover:bg-white/20 transition-all cursor-pointer flex items-center justify-center text-white">
-                                        <div className="w-4 h-4 bg-white/20 rounded-full"></div>
-                                    </div>
-                                ))}
                             </div>
                         </div>
                     </div>

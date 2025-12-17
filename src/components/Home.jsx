@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe, Award } from 'lucide-react';
-import logo1 from "../assets/logo.jpeg"
-import logo from "../assets/Powering.png"
+import { Menu, X, ArrowRight, Zap, Target, Users, CheckCircle, Star, Mail, Phone, MapPin, AlarmClock, ServerCog, Fingerprint, Telescope, Facebook, Linkedin, Twitter, Code, HardDrive, CloudUpload, Shield, Globe, Award, ArrowLeftCircle } from 'lucide-react';
 import logo_final from "../assets/f_logo.jpg"
 import pic1 from "../assets/pic1.png"
-import wplogo from "../assets/wplogo.png"
-// import vedioload from "../assets/Techrootvedio.mp4"
-// import vedio from "../assets/Vedio1.mp4"
 import vedio from "../assets/vedio2.mp4"
-import img1 from "../assets/img1.jpeg"
-import AnimatedRibbons from './Banner';
-import TextSlider from './Textslider';
+import img3 from "../assets/about.jpeg"
 import ServicesSection from './Allservice';
-import Slider from './Slider';
 import ContactSection from './ContactUs';
 import WhatsAppContact from './Wpmessage';
 const HomePage = () => {
@@ -20,7 +12,7 @@ const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [vedioshow, setvedioshow] = useState(true)
-  const [IsShow,setIsShow]=useState(true)
+  const [IsShow, setIsShow] = useState(true)
   useEffect(() => {
     const handleScroll = () => {
       setTimeout(() => {
@@ -40,8 +32,8 @@ const HomePage = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const handlemessagebtn=()=>{
-    if(IsShow){
+  const handlemessagebtn = () => {
+    if (IsShow) {
       return setIsShow(false)
     }
     setIsShow(true)
@@ -132,74 +124,104 @@ const HomePage = () => {
 
 
       {/* Navbar */}
-      {/* {IsShow?"":<div className="wplogo fixed bottom-16 z-100 right-0 cursor-pointer ">
 
-        <div className='bg-green-500 h-[82px] w-[150px] flex items-center justify-center rounded-3xl'>
-          <a href="https://wa.me/919635013952?text=Hwllo%20how%20are%20you?" target='_blank'><button className=' bg-sky-600 p-2 rounded-2xl font-[play] font-bold border-2 cursor-pointer'>Send Message</button></a>
-        </div>
-      </div>}
-      <div className="wplogo fixed bottom-2 z-100 right-0 cursor-pointer ">
-        <img onClick={handlemessagebtn} className='h-15 w-15' src={wplogo} alt="" />
-      </div> */}
-      <WhatsAppContact/>
+      <WhatsAppContact />
       {/* Hero Section */}
-      <div className=''>
-        <section id="home" data-animate className="md:min-h-screen flex items-center justify-center relative mt-22 md:mt-0">
-
-          <div className="max-w-7xl mx-auto text-center  md:mb-0">
-            <div className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-7xl font-bold mb-6 bg-linear-to-r from-yellow-500 via-orange-500 to-green-500 bg-clip-text text-transparent animate-gradient">
-                Empowering <br /> The next generation of IT <br /> With Zero compromise
-              </h1>
-              <p className="text-2xl md:text-4xl text-orange-500 font-bold mb-8 max-w-3xl mx-auto bg-[#134590fe] md:bg-[#134590a3]">
-                Professional services that drive growth, innovation, and success for modern businesses
-              </p>
-              <button className="group  bg-linear-to-r from-yellow-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
-                Get Started
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </section>
-        <video className='w-full relative -z-1 top-[-619px] hidden md:block' playsInline muted autoPlay loop >
-
+      <section
+        id="home"
+        className="relative h-screen flex items-center justify-center overflow-hidden"
+      >
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover  md:block"
+          playsInline
+          muted
+          autoPlay
+          loop
+        >
           <source src={vedio} type="video/mp4" />
         </video>
-      </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto text-center px-4">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-linear-to-r from-yellow-500 via-orange-500 to-green-500 bg-clip-text text-transparent animate-fade-in-up" style={{ fontFamily: "Lato" }}>
+            Empowering <br /> The next generation of IT <br /> With Zero compromise
+          </h1>
+
+          <p className="text-xl md:text-3xl text-green-500 font-bold mb-8 bg-[#0733d0c4] inline-block px-4 py-2 rounded-xl animate-bounce">
+            Professional services that drive growth, innovation, and success
+          </p>
+          <br />
+
+        </div>
+      </section>
+
+
       {/* <div className='mt-8 h-[600px]  animate-fade-in-up '>
 
         <Slider />
       </div> */}
       {/* About Section */}
-      <section id="about" data-animate className={`py-20 px-4 transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ background: "", borderBottomLeftRadius: "200px", borderBottomRightRadius: "200px" }}>
+      <section
+        id="about"
+        data-animate
+        className={`relative py-24 px-6 transition-all duration-1000 
+  ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        style={{
+          background: "linear-gradient(135deg, rgb(87 233 156), rgb(19 118 68))",
+          borderBottomLeftRadius: "20px",
+          borderBottomRightRadius: "20px",
+        }}
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+
+            {/* LEFT CONTENT */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold lg:h-20 h-26 bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
-                About Our Company
-              </h2>
-              <p className="text-gray-900 text-lg leading-relaxed mb-4">
-                We're BitNextro Solutions, a next-gen IT startup that converts ideas into smart technology.
-                From seamless software to reliable IT services, we build solutions that make business
-                operations simpler, faster, and more transformative.
-                Curiosity, creativity, and purpose drive us, and we don't just follow trends-we create them.
-              </p>
-              <p className="text-gray-900 text-lg leading-relaxed">
-                Our mission is to deliver practical, end-to-end IT solutions from networking and infrastructure to
-                tech support and cyber security solutions designed to make operations simpler, more
-                productive, and ultimately help businesses succeed in a digital world.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full h-96 bg-linear-to-br from-blue-400 via-purple-400 to-pink-400 rounded-3xl shadow-2xl animate-pulse-slow"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-white text-6xl font-bold">10+</div>
+              <div className='flex justify-center'>
+                <p className="inline-block text-center w-[150px] mb-3 px-4 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                  About BitNextro
+                </p>
               </div>
+
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent text-center">
+                Building Smart Technology for Modern Businesses
+              </h2>
+
+
+
+              <p className="text-gray-900 text-xl font-bold leading-relaxed mb-5">
+                BitNextro Solutions is a next-generation IT company focused on transforming
+                ideas into powerful digital solutions. We design reliable software,
+                scalable infrastructure, and secure systems that simplify business operations
+                and accelerate growth.
+              </p>
+
+              <p className="text-gray-900 text-xl font-bold leading-relaxed">
+                Our mission is to deliver practical, end-to-end IT services — from networking
+                and cybersecurity to enterprise support — enabling organizations to thrive
+                in an ever-evolving digital landscape.
+              </p>
+
+              {/* CTA */}
+              <button className="mt-8 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold shadow-md transition animate-bounce">
+                Learn More About Us
+              </button>
             </div>
+
+            {/* RIGHT VISUAL / STATS */}
+            <div className="relative">
+              <img className='rounded-2xl' src={img3} alt="" />
+            </div>
+
           </div>
         </div>
       </section>
-      <section id="services" className='mt-64'>
+
+      <section id="services" className='mt-24'>
         <ServicesSection />
       </section>
       {/* Why Choose Us */}
@@ -207,7 +229,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 md:gap-12 items-center">
             <div className="relative order-2 md:order-1">
-              <div className="w-full flex items-center justify-center h-96 bg-linear-to-br rounded-3xl animate-pulse-slow">
+              <div className="w-full flex items-center justify-center h-96 bg-linear-to-br rounded-3xl ">
                 <img src={pic1} alt="" className='md:h-[350px] ' />
               </div>
             </div>
