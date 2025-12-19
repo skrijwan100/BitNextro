@@ -68,7 +68,7 @@ const ContactSectionLight = () => {
                                 </div>
                                 <div className="flex items-center space-x-4 text-gray-900 font-bold  text-xl">
                                     <MapPin className="w-6 h-6" />
-                                    <span>Reveal very soon </span>
+                                    <span>5, park lane kol 16, park street </span>
                                 </div>
                             </div>
                         </div>

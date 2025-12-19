@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import logo_final_p from "../assets/f_logo.png"
 import { Menu, X } from "lucide-react";
 import Head from "./Head";
+import { Link } from "react-router";
 
 const servicesData = [
   /* same servicesData as before - keep the array you already have */
@@ -120,7 +121,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <img className=" w-[220px] md:w-[280px] md:mt-[18px]" src={logo_final_p} alt="logo" />
+             <Link to="/"> <img className=" w-[220px] md:w-[280px] md:mt-[18px]" src={logo_final_p} alt="logo" /></Link>
             </div>
 
             {/* Desktop Menu */}
@@ -220,16 +221,12 @@ export default function Navbar() {
                 About
               </a>
 
-              <a
-                href="#career"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("career")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <Link
+              to="/career"
                 className="text-gray-700 text-xl font-[play] hover:text-[#168acc] font-medium"
               >
                 Career
-              </a>
+              </Link>
 
               <a
                 href="#contact"
